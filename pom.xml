@@ -52,6 +52,18 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.evosuite</groupId>
+			<artifactId>evosuite-standalone-runtime</artifactId>
+			<version>1.0.6</version>
+			<scope>test</scope>
+			</dependency>
+		<dependency>
+			<groupId>org.evosuite</groupId>
+			<artifactId>evosuite-master</artifactId>
+			<version>1.0.6</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>5.2.0</version>
@@ -164,6 +176,14 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.evosuite.plugins</groupId>
+				<artifactId>evosuite-maven-plugin</artifactId>
+				<version>1.0.6</version>
+				<configuration>
+					<targetClass>com.example.MyClass</targetClass>
+				</configuration>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -398,4 +418,21 @@
 			</build>
 		</profile>
 	</profiles>
+	<repositories>
+		<repository>
+			<id>evosuite-repo</id>
+			<url>https://evosuite.org/repo/maven/</url>
+		</repository>
+			<repository>
+  <id>eclipse</id>
+  <url>https://download.eclipse.org/technology/epp/packages/mars/</url>
+</repository>
+	</repositories>
+		<pluginRepositories>
+	<pluginRepository>
+		<id>evosuite-repo</id>
+		<url>http://www.evosuite.org/maven/</url>
+	</pluginRepository>
+	</pluginRepositories>
+
 </project>
